@@ -1,22 +1,24 @@
+import 'dart:ffi';
+
 import 'package:design_vkr/bloc/color_bloc.dart';
 import 'package:design_vkr/utils/constants.dart';
 import 'package:design_vkr/utils/text_styles.dart';
 import 'package:design_vkr/widgets/color_row.dart';
 import 'package:design_vkr/widgets/custom_color_tween.dart';
+import 'package:design_vkr/widgets/design_widgets/custom_checkbox.dart';
+import 'package:design_vkr/widgets/design_widgets/custom_radio_button.dart';
+import 'package:design_vkr/widgets/design_widgets/custom_switch_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum RadioValue { turnOn, turnOff }
-
 class RadioScreen extends StatelessWidget {
   const RadioScreen({Key? key}) : super(key: key);
-
-  final RadioValue rv = RadioValue.turnOn;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -55,10 +57,10 @@ class RadioScreen extends StatelessWidget {
         CustomColorTween(
           bloc: context.read<ColorBloc>(),
           builder: (color) => buildRowWithText(
-            child: CupertinoSwitch(
-              value: true,
+            child: CustomSwitchButton(
+              isChecked: true,
               onChanged: (value) {},
-              activeColor: color,
+              color: color,
             ),
             text: "ВЫБРАННЫЙ",
           ),
@@ -69,11 +71,10 @@ class RadioScreen extends StatelessWidget {
         CustomColorTween(
           bloc: context.read<ColorBloc>(),
           builder: (color) => buildRowWithText(
-            child: CupertinoSwitch(
-              value: false,
+            child: CustomSwitchButton(
+              isChecked: false,
               onChanged: (value) {},
-              activeColor: color,
-              thumbColor: color,
+              color: color,
             ),
             text: "НЕ ВЫБРАННЫЙ",
           ),
@@ -90,10 +91,10 @@ class RadioScreen extends StatelessWidget {
           builder: (color) => buildRowWithText(
             child: Transform.scale(
               scale: 2.0,
-              child: Checkbox(
-                value: true,
+              child: CustomCheckbox(
+                isChecked: true,
                 onChanged: (value) {},
-                activeColor: color,
+                color: color,
               ),
             ),
             text: "ВЫБРАННЫЙ",
@@ -107,10 +108,10 @@ class RadioScreen extends StatelessWidget {
           builder: (color) => buildRowWithText(
             child: Transform.scale(
               scale: 2.0,
-              child: Checkbox(
-                value: false,
+              child: CustomCheckbox(
+                isChecked: false,
                 onChanged: (value) {},
-                activeColor: color,
+                color: color,
               ),
             ),
             text: "НЕ ВЫБРАННЫЙ",
@@ -131,11 +132,10 @@ class RadioScreen extends StatelessWidget {
               text: "ВЫБРАННЫЙ",
               child: Transform.scale(
                 scale: 2.0,
-                child: Radio(
-                  value: RadioValue.turnOn,
-                  groupValue: rv,
+                child: CustomRadioButton(
+                  isChecked: true,
                   onChanged: (value) {},
-                  activeColor: color,
+                  color: color,
                 ),
               ),
             );
@@ -150,11 +150,10 @@ class RadioScreen extends StatelessWidget {
             return buildRowWithText(
               child: Transform.scale(
                 scale: 2.0,
-                child: Radio(
-                  value: RadioValue.turnOff,
-                  groupValue: rv,
+                child: CustomRadioButton(
+                  isChecked: false,
                   onChanged: (value) {},
-                  activeColor: color,
+                  color: color,
                 ),
               ),
               text: "НЕ ВЫБРАННЫЙ",

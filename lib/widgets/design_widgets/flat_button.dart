@@ -2,8 +2,8 @@ import 'package:design_vkr/utils/constants.dart';
 import 'package:design_vkr/widgets/custom_text_button.dart';
 import 'package:flutter/material.dart';
 
-class CustomFilledButton extends StatelessWidget {
-  const CustomFilledButton({
+class CustomFlatButton extends StatelessWidget {
+  const CustomFlatButton({
     Key? key,
     required this.backgroundColor,
     this.isDisabled = false,

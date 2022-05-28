@@ -16,6 +16,7 @@ const Color secondaryColor = Color(0xffFFF8FD);
 const Color errorColor = Color(0xffEA1818);
 const Color lightColor = Color(0xffBDBDBD);
 const Color darkColor = Color(0xff000000);
+const Color backgroundColor = Color(0xffE5E5E5);
 
 const double borderRadius = 40.0;
 const double borderWidth = 3.0;
