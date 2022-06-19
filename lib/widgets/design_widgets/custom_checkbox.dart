@@ -11,13 +11,13 @@ class CustomCheckbox extends StatelessWidget {
 
   final Color color;
   final bool isChecked;
-  final void Function(bool value)? onChanged;
+  final void Function(bool? value)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return Checkbox(
       value: isChecked,
-      onChanged: (value) {},
+      onChanged: onChanged ?? (value) {},
       activeColor: color,
     );
   }

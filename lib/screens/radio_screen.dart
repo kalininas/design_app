@@ -1,6 +1,4 @@
-import 'dart:ffi';
-
-import 'package:design_vkr/bloc/color_bloc.dart';
+import 'package:design_vkr/bloc/color/color_bloc.dart';
 import 'package:design_vkr/utils/constants.dart';
 import 'package:design_vkr/utils/text_styles.dart';
 import 'package:design_vkr/widgets/color_row.dart';
@@ -8,7 +6,6 @@ import 'package:design_vkr/widgets/custom_color_tween.dart';
 import 'package:design_vkr/widgets/design_widgets/custom_checkbox.dart';
 import 'package:design_vkr/widgets/design_widgets/custom_radio_button.dart';
 import 'package:design_vkr/widgets/design_widgets/custom_switch_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,4 +1,4 @@
-import 'package:design_vkr/bloc/color_bloc.dart';
+import 'package:design_vkr/bloc/color/color_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -8,12 +8,18 @@ class CustomTextField extends StatelessWidget {
     this.error,
     this.color = primaryColor3,
     this.initialValue,
+    this.onChanged,
+    this.hintText,
+    this.obscured = false,
   }) : super(key: key);
 
   final bool enabled;
   final Color color;
   final String? initialValue;
   final String? error;
+  final bool obscured;
+  final String? hintText;
+  final void Function(String value)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +62,9 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       enabled: enabled,
       cursorColor: color,
+      onChanged: onChanged,
       initialValue: initialValue,
+      obscureText: obscured,
       decoration: InputDecoration(
         fillColor: secondaryColor,
         filled: true,
@@ -64,6 +72,10 @@ class CustomTextField extends StatelessWidget {
         focusedBorder: focusedBorder,
         errorBorder: errorBorder,
         border: border,
+        labelText: hintText,
+        labelStyle: TextStyle(
+          color: error == null || error!.isEmpty ? color : errorColor,
+        ),
         disabledBorder: disabledBorder,
         enabledBorder: enabledBorder,
       ),

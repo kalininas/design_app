@@ -1,4 +1,4 @@
-import 'package:design_vkr/bloc/color_bloc.dart';
+import 'package:design_vkr/bloc/color/color_bloc.dart';
 import 'package:design_vkr/utils/constants.dart';
 import 'package:design_vkr/widgets/color_row.dart';
 import 'package:design_vkr/widgets/custom_color_tween.dart';

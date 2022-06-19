@@ -1,6 +1,8 @@
-import 'package:design_vkr/bloc/color_bloc.dart';
+import 'package:design_vkr/bloc/color/color_bloc.dart';
+import 'package:design_vkr/bloc/sign_up/sign_up_bloc.dart';
 import 'package:design_vkr/screens/button_screen.dart';
 import 'package:design_vkr/screens/radio_screen.dart';
+import 'package:design_vkr/screens/sign_up_screen.dart';
 import 'package:design_vkr/screens/text_field_screen.dart';
 import 'package:design_vkr/utils/constants.dart';
 import 'package:design_vkr/widgets/design_widgets/flat_button.dart';
@@ -41,6 +43,17 @@ class NavigationScreen extends StatelessWidget {
               context,
               label: "На экран с текстовыми полями",
               page: const TextFieldScreen(),
+            ),
+            const SizedBox(
+              height: verticalPadding,
+            ),
+            _buildNavigationButton(
+              context,
+              label: "На экран регистрации",
+              page: BlocProvider(
+                create: (context) => SignUpBloc(),
+                child: const SignUpScreen(),
+              ),
             ),
           ],
         ),
